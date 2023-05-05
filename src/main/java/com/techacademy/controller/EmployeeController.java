@@ -18,12 +18,12 @@ public class EmployeeController {
     }
 
     /** 一覧画面を表示 */
-    @GetMapping("/list")
+    @GetMapping("/")
     public String getList(Model model) {
         // 全件検索結果をModelに登録
         model.addAttribute("employeelist", service.getEmployeeList());
-        // user/list.htmlに画面遷移
-        return "employee/list";
+        // "employee/list.htmlに画面遷移
+        return "employee/";
     }
 
 }
