@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>DailyReportSystem</title>
+    <link rel="stylesheet" th:href="@{/css/employee/list.css}">
+</head>
+<body>
+    <h1>employee日報管理システム</h1>
+    <h2>employee一覧(全件)</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>氏名</th>
+            <th>削除フラグ</th>
+            <th>登録日時</th>
+            <th>更新日時</th>
+        </tr>
+        <tr th:each="employee : ${employeelist}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.delete_flag}"></td>
+            <td th:text="${created_at}"></td>
+            <td th:text="${updated_at}"></td>
+        </tr>
+    </table>
+</body>
+</html>
